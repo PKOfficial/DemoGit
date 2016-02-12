@@ -20,11 +20,16 @@ ON UPDATE CASCADE
 );
 
 ALTER TABLE `subject_allocation` ADD UNIQUE `unique_index`(`student_id`,`subject_id`);
-\
-
 
 UPDATE my_table SET updated1 = (CASE WHEN name <> '"+stu.name+"' THEN NOW() ELSE updated END), name = '"+stu.name+"' updated2 = (CASE WHEN email <> '"+stu.email+"' THEN NOW() ELSE updated END),
     name = '"+stu.email+"'
     updated = (CASE WHEN mobile_no <> '"+stu.mobile+"' THEN NOW() ELSE updated END),
     name = '"+stu.mobile+"'
 WHERE id = "+id
+
+SELECT column_Name1,column_name2,......
+  From tbl_name1,tbl_name2,tbl_name3
+  where tbl_name1.column_name = tbl_name2.column_name 
+  and tbl_name2.column_name = tbl_name3.column_name
+
+SELECT * FROM student a JOIN subject b ON a.ID = b.ID JOIN subject_allocation c ON a.ID = c.ID
